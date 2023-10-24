@@ -1,0 +1,6 @@
+use_frameworks!
+target 'nslib-security-ios_Tests' do
+  pod 'nslib-security-ios', :path => '../'
+  
+  
+end
