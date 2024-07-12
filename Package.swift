@@ -4,20 +4,20 @@
 import PackageDescription
 
 let package = Package(
-    name: "ns-security-ios",
+    name: "SecureUtility",
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "ns-security-ios",
-            targets: ["ns-security-ios"]),
+            name: "SecureUtility",
+            targets: ["SecureUtility"]),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "ns-security-ios"),
+            name: "SecureUtility"),
         .testTarget(
-            name: "ns-security-iosTests",
-            dependencies: ["ns-security-ios"]),
+            name: "SecureUtility-iosTests",
+            dependencies: ["SecureUtility"]),
     ]
 )
