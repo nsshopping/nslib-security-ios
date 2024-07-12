@@ -11,7 +11,7 @@ import UIKit
 
 open class SecureUtility {
     
-    public func hasJailbreak() -> Bool {
+    public static func hasJailbreak() -> Bool {
         
         guard let cydiaUrlScheme = NSURL(string: "cydia://package/com.example.package") else { return false }
         if UIApplication.shared.canOpenURL(cydiaUrlScheme as URL) {
@@ -43,18 +43,18 @@ open class SecureUtility {
             return true
         }
         
-        if canOpen(path: "/Applications/Dopamine.app") ||
-            canOpen(path: "/Applications/Sileo.app") ||
-            canOpen(path: "/Applications/Cydia.app") ||
-            canOpen(path: "/Library/MobileSubstrate/MobileSubstrate.dylib") ||
-            canOpen(path: "/bin/bash") ||
-            canOpen(path: "/usr/sbin/sshd") ||
-            canOpen(path: "/etc/apt") ||
-            canOpen(path: "/usr/bin/ssh") {
+        if SecureUtility.canOpen(path: "/Applications/Dopamine.app") ||
+            SecureUtility.canOpen(path: "/Applications/Sileo.app") ||
+            SecureUtility.canOpen(path: "/Applications/Cydia.app") ||
+            SecureUtility.canOpen(path: "/Library/MobileSubstrate/MobileSubstrate.dylib") ||
+            SecureUtility.canOpen(path: "/bin/bash") ||
+            SecureUtility.canOpen(path: "/usr/sbin/sshd") ||
+            SecureUtility.canOpen(path: "/etc/apt") ||
+            SecureUtility.canOpen(path: "/usr/bin/ssh") {
             return true
         }
         
-        if !checkDYLD() {
+        if !SecureUtility.checkDYLD() {
             return true
         }
         
@@ -68,7 +68,7 @@ open class SecureUtility {
         }
     }
 
-    private func checkDYLD() -> Bool {
+    private static func checkDYLD() -> Bool {
 
            let suspiciousLibraries = [
                "SubstrateLoader.dylib",
@@ -109,7 +109,7 @@ open class SecureUtility {
        }
 
 
-    private func canOpen(path: String) -> Bool {
+    private static func canOpen(path: String) -> Bool {
         let file = fopen(path, "r")
         guard file != nil else { return false }
         fclose(file)
