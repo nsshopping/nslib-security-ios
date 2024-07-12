@@ -9,7 +9,7 @@ import Foundation
 import MachO
 import UIKit
 
-class SecureUtility {
+open class SecureUtility {
     
     public func hasJailbreak() -> Bool {
         
