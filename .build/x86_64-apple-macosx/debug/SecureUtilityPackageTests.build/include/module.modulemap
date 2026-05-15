@@ -1,0 +1,3 @@
+module SecureUtilityPackageTests {
+    header "/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtilityPackageTests.build/include/SecureUtilityPackageTests-Swift.h"
+}

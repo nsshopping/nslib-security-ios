@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtility_iosTests.build/primary.swiftdeps"
+  },
+  "/Users/nsh/Documents/workspace/nslib-security-ios/Tests/SecureUtility-iosTests/SecureUtility_iosTests.swift": {
+    "dependencies": "/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtility_iosTests.build/SecureUtility_iosTests.d",
+    "object": "/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtility_iosTests.build/SecureUtility_iosTests.swift.o",
+    "swiftmodule": "/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtility_iosTests.build/SecureUtility_iosTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtility_iosTests.build/SecureUtility_iosTests.swiftdeps",
+    "diagnostics": "/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtility_iosTests.build/SecureUtility_iosTests.dia"
+  }
+}

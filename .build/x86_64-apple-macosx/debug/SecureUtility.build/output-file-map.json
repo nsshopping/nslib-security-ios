@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtility.build/primary.swiftdeps"
+  },
+  "/Users/nsh/Documents/workspace/nslib-security-ios/Sources/SecureUtility/SecureUtility.swift": {
+    "dependencies": "/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtility.build/SecureUtility.d",
+    "object": "/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtility.build/SecureUtility.swift.o",
+    "swiftmodule": "/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtility.build/SecureUtility~partial.swiftmodule",
+    "swift-dependencies": "/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtility.build/SecureUtility.swiftdeps",
+    "diagnostics": "/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtility.build/SecureUtility.dia"
+  }
+}

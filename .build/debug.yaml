@@ -1,0 +1,112 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "PackageStructure": ["<PackageStructure>"]
+  "SecureUtility-iosTests-x86_64-apple-macosx-debug.module": ["<SecureUtility-iosTests-x86_64-apple-macosx-debug.module>"]
+  "SecureUtility-x86_64-apple-macosx-debug.module": ["<SecureUtility-x86_64-apple-macosx-debug.module>"]
+  "SecureUtilityPackageTests-x86_64-apple-macosx-debug.module": ["<SecureUtilityPackageTests-x86_64-apple-macosx-debug.module>"]
+  "SecureUtilityPackageTests-x86_64-apple-macosx-debug.test": ["<SecureUtilityPackageTests-x86_64-apple-macosx-debug.test>"]
+  "main": ["<SecureUtility-x86_64-apple-macosx-debug.module>"]
+  "test": ["<SecureUtility-iosTests-x86_64-apple-macosx-debug.module>","<SecureUtility-x86_64-apple-macosx-debug.module>","<SecureUtilityPackageTests-x86_64-apple-macosx-debug.test>"]
+default: "main"
+nodes:
+  "/Users/nsh/Documents/workspace/nslib-security-ios/Sources/SecureUtility/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "/Users/nsh/Documents/workspace/nslib-security-ios/Tests/SecureUtility-iosTests/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+commands:
+  "/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtility.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/nsh/Documents/workspace/nslib-security-ios/Sources/SecureUtility/SecureUtility.swift"]
+    outputs: ["/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtility.build/sources"]
+    description: "Write auxiliary file /Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtility.build/sources"
+
+  "/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtilityPackageTests.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtilityPackageTests.derived/runner.swift"]
+    outputs: ["/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtilityPackageTests.build/sources"]
+    description: "Write auxiliary file /Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtilityPackageTests.build/sources"
+
+  "/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtilityPackageTests.derived/runner.swift":
+    tool: test-entry-point-tool
+    inputs: []
+    outputs: ["/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtilityPackageTests.derived/runner.swift"]
+
+  "/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtilityPackageTests.product/Objects.LinkFileList":
+    tool: write-auxiliary-file
+    inputs: ["<link-file-list>","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtility.build/SecureUtility.swift.o","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtilityPackageTests.build/runner.swift.o","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtility_iosTests.build/SecureUtility_iosTests.swift.o"]
+    outputs: ["/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtilityPackageTests.product/Objects.LinkFileList"]
+    description: "Write auxiliary file /Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtilityPackageTests.product/Objects.LinkFileList"
+
+  "/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtility_iosTests.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/nsh/Documents/workspace/nslib-security-ios/Tests/SecureUtility-iosTests/SecureUtility_iosTests.swift"]
+    outputs: ["/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtility_iosTests.build/sources"]
+    description: "Write auxiliary file /Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtility_iosTests.build/sources"
+
+  "/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"]
+    outputs: ["/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+
+  "<SecureUtility-iosTests-x86_64-apple-macosx-debug.module>":
+    tool: phony
+    inputs: ["/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtility_iosTests.build/SecureUtility_iosTests.swift.o","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/Modules/SecureUtility_iosTests.swiftmodule"]
+    outputs: ["<SecureUtility-iosTests-x86_64-apple-macosx-debug.module>"]
+
+  "<SecureUtility-x86_64-apple-macosx-debug.module>":
+    tool: phony
+    inputs: ["/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtility.build/SecureUtility.swift.o","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/Modules/SecureUtility.swiftmodule"]
+    outputs: ["<SecureUtility-x86_64-apple-macosx-debug.module>"]
+
+  "<SecureUtilityPackageTests-x86_64-apple-macosx-debug.module>":
+    tool: phony
+    inputs: ["/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtilityPackageTests.build/runner.swift.o","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/Modules/SecureUtilityPackageTests.swiftmodule"]
+    outputs: ["<SecureUtilityPackageTests-x86_64-apple-macosx-debug.module>"]
+
+  "<SecureUtilityPackageTests-x86_64-apple-macosx-debug.test>":
+    tool: phony
+    inputs: ["/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtilityPackageTests.xctest/Contents/MacOS/SecureUtilityPackageTests"]
+    outputs: ["<SecureUtilityPackageTests-x86_64-apple-macosx-debug.test>"]
+
+  "C.SecureUtility-iosTests-x86_64-apple-macosx-debug.module":
+    tool: shell
+    inputs: ["/Users/nsh/Documents/workspace/nslib-security-ios/Tests/SecureUtility-iosTests/SecureUtility_iosTests.swift","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/Modules/SecureUtility.swiftmodule","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtility_iosTests.build/sources"]
+    outputs: ["/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtility_iosTests.build/SecureUtility_iosTests.swift.o","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/Modules/SecureUtility_iosTests.swiftmodule"]
+    description: "Compiling Swift Module 'SecureUtility_iosTests' (1 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","SecureUtility_iosTests","-emit-dependencies","-emit-module","-emit-module-path","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/Modules/SecureUtility_iosTests.swiftmodule","-output-file-map","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtility_iosTests.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtility_iosTests.build/sources","-I","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/Modules","-target","x86_64-apple-macosx14.0","-incremental","-enable-batch-mode","-serialize-diagnostics","-index-store-path","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/index/store","-Onone","-enable-testing","-Xfrontend","-enable-cross-import-overlays","-j12","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-swift-version","5","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.4.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.4.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-fPIC","-Xcc","-g","-package-name","nslib_security_ios"]
+
+  "C.SecureUtility-x86_64-apple-macosx-debug.module":
+    tool: shell
+    inputs: ["/Users/nsh/Documents/workspace/nslib-security-ios/Sources/SecureUtility/SecureUtility.swift","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtility.build/sources"]
+    outputs: ["/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtility.build/SecureUtility.swift.o","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/Modules/SecureUtility.swiftmodule"]
+    description: "Compiling Swift Module 'SecureUtility' (1 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","SecureUtility","-emit-dependencies","-emit-module","-emit-module-path","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/Modules/SecureUtility.swiftmodule","-output-file-map","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtility.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtility.build/sources","-I","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/Modules","-target","x86_64-apple-macosx10.15","-incremental","-enable-batch-mode","-serialize-diagnostics","-index-store-path","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/index/store","-Onone","-enable-testing","-j12","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtility.build/include/SecureUtility-Swift.h","-swift-version","5","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.4.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.4.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-fPIC","-Xcc","-g","-package-name","nslib_security_ios"]
+
+  "C.SecureUtilityPackageTests-x86_64-apple-macosx-debug.module":
+    tool: shell
+    inputs: ["/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtilityPackageTests.derived/runner.swift","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/Modules/SecureUtility_iosTests.swiftmodule","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtilityPackageTests.build/sources"]
+    outputs: ["/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtilityPackageTests.build/runner.swift.o","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/Modules/SecureUtilityPackageTests.swiftmodule"]
+    description: "Compiling Swift Module 'SecureUtilityPackageTests' (1 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","SecureUtilityPackageTests","-emit-dependencies","-emit-module","-emit-module-path","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/Modules/SecureUtilityPackageTests.swiftmodule","-output-file-map","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtilityPackageTests.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtilityPackageTests.build/sources","-I","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/Modules","-target","x86_64-apple-macosx10.15","-incremental","-enable-batch-mode","-serialize-diagnostics","-index-store-path","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/index/store","-Onone","-enable-testing","-Xfrontend","-enable-cross-import-overlays","-j12","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtilityPackageTests.build/include/SecureUtilityPackageTests-Swift.h","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.4.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.4.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-fPIC","-Xcc","-g","-package-name","nslib_security_ios"]
+
+  "C.SecureUtilityPackageTests-x86_64-apple-macosx-debug.test":
+    tool: shell
+    inputs: ["/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtility.build/SecureUtility.swift.o","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtilityPackageTests.build/runner.swift.o","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtility_iosTests.build/SecureUtility_iosTests.swift.o","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtilityPackageTests.product/Objects.LinkFileList"]
+    outputs: ["/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtilityPackageTests.xctest/Contents/MacOS/SecureUtilityPackageTests"]
+    description: "Linking ./.build/x86_64-apple-macosx/debug/SecureUtilityPackageTests.xctest/Contents/MacOS/SecureUtilityPackageTests"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-L","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug","-o","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtilityPackageTests.xctest/Contents/MacOS/SecureUtilityPackageTests","-module-name","SecureUtilityPackageTests","-Xlinker","-no_warn_duplicate_libraries","-Xlinker","-bundle","-Xlinker","-rpath","-Xlinker","@loader_path/../../../","@/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/SecureUtilityPackageTests.product/Objects.LinkFileList","-Xlinker","-rpath","-Xlinker","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-6.2/macosx","-target","x86_64-apple-macosx14.0","-Xlinker","-add_ast_path","-Xlinker","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/Modules/SecureUtility.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/Modules/SecureUtilityPackageTests.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Users/nsh/Documents/workspace/nslib-security-ios/.build/x86_64-apple-macosx/debug/Modules/SecureUtility_iosTests.swiftmodule","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.4.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/nsh/Documents/workspace/nslib-security-ios/Sources/SecureUtility/","/Users/nsh/Documents/workspace/nslib-security-ios/Tests/SecureUtility-iosTests/","/Users/nsh/Documents/workspace/nslib-security-ios/Package.swift","/Users/nsh/Documents/workspace/nslib-security-ios/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+
